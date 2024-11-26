@@ -1,43 +1,114 @@
 # Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+# which you are expected to set up once and rarely edit after that.
 
 # Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
 title: Kintaro AI
 email: baraban@kintaroai.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: Kintaro_AI
-github_username:  KintaroAI
+author: "Baraban" # Replace with your name
+description: >-
+  Your site's description here. This will appear in your document head meta
+  (for Google search results) and in your feed.xml site description.
+baseurl: "" # the subpath of your site, e.g., /blog
+url: "" # replace with your actual domain
 
-# Build settings
+# Social links
+repo: "https://github.com/KintaroAI/com" # Replace with your repo URL
+github_user: "KintaroAI"
+github_repo: "com" # Replace with your repository name
+github_branch: "master/content" # Or the default branch of your repo
+
+# Optional social links
+twitter: Kintaro_AI
+linkedin: your-linkedin-username # Replace if you have one
+dockerhub: your-dockerhub-username # Replace if applicable
+
+# Theme settings
+remote_theme: "vsoch/docsy-jekyll"
 markdown: kramdown
-theme: minima
+
+# Appearance settings
+tag_color: primary # Options: danger, success, warning, primary, info, secondary
+accentColor: red # Options: red, purple, green, etc.
+themeColor: red # Options: red, purple, green, blue, orange, purple, grey
+fixedNav: true # true or false
+
+# Logo and branding
+# Uncomment and set these if you have a logo
+logo: "assets/img/logo/your-logo.png"
+logo_pixels: 34
+color: "#30638e" # primary color for header, buttons
+
+# Versioning (optional)
+# version_params:
+#   version_menu: "Release"
+#   version_dir: Archive
+#   tocversion_dir: versions
+#   versioning: true
+#   allow_search: true
+#   search_versions:
+#     - Previous
+#   latest: Current
+#   versions:
+#     - Current
+#     - Previous
+
+# Feedback
+feedback: false # Set to false if you don't want feedback buttons
+
+# Privacy Policy
+# privacy: https://www.kintaroai.com/privacy # Uncomment and set if you have one
+
+# Google Analytics (optional)
+# google-analytics: UA-XXXXXXXXXX
+
+# Permalink structure
+permalink: /:year/:title/
+
+# Plugins
 plugins:
   - jekyll-feed
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-remote-theme
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - _site
+  - CHANGELOG.md
+  - LICENSE
+  - README.md
+  - vendor
+
+# Collections
+collections:
+  docs:
+    output: true
+    permalink: /:collection/:path
+
+# Defaults
+defaults:
+  - scope:
+      path: "_docs"
+      type: "docs"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: "posts"
+      type: "posts"
+    values:
+      layout: "post"
+
