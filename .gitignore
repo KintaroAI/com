@@ -1,5 +1,5 @@
-kintaro/_site
-kintaro/.sass-cache
-kintaro/.jekyll-cache
-kintaro/.jekyll-metadata
-kintaro/vendor
+vendor
+Gemfile.lock
+_site
+.sass-cache
+.jekyll-metadata

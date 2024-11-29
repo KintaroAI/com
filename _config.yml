@@ -17,7 +17,7 @@ url: "" # replace with your actual domain
 repo: "https://github.com/KintaroAI/com" # Replace with your repo URL
 github_user: "KintaroAI"
 github_repo: "com" # Replace with your repository name
-github_branch: "master/content" # Or the default branch of your repo
+github_branch: "master" # Or the default branch of your repo
 
 # Optional social links
 twitter: Kintaro_AI
@@ -87,6 +87,12 @@ exclude:
   - LICENSE
   - README.md
   - vendor
+  - deploy.sh
+  - docker-compose.yaml
+  - jekyll_build.sh
+  - jekyll_dev_run.sh
+  - jekyll_init.sh
+  - nginx.sh
 
 # Collections
 collections:

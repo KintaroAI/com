@@ -13,7 +13,7 @@ fi
 
 # Run the Docker container
 docker run \
-  --volume="$PWD/content/:/srv/jekyll:Z" \
+  --volume="$PWD/:/srv/jekyll:Z" \
   -d \
   --restart always \
   --name ${CONTAINER_NAME} \

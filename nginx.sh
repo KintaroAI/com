@@ -14,7 +14,7 @@ fi
 # Run the Docker container
 docker run \
   --name ${CONTAINER_NAME} \
-  --volume="$PWD/content/_site/:/usr/share/nginx/html/" \
+  --volume="$PWD/_site/:/usr/share/nginx/html/" \
   -d \
   --restart always \
   -p 8080:80 \
