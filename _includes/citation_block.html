@@ -1,0 +1,33 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/citation-js/0.7.17/citation.min.js"></script>
+
+<div id="citation-output"></div>
+<div class="highlight">
+    <pre class="highlight">
+        <code id="citation-output-bibtex"></code>
+    </pre>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var Cite = require('citation-js');
+    // See https://www.overleaf.com/learn/latex/Bibliography_management_with_biblatex#Reference_guide
+    {% assign author_list = page.author | default: site.author.name | default: "" | split: "," %}
+    const cite = new Cite(`@misc{example,
+      title={ {{- page.title | escape -}} },
+      author={
+        {%- for name in author_list -%}
+            {{- name | strip -}} {% unless forloop.last %} and {% endunless %}
+        {%- endfor -%}
+      },
+      year={ {{- page.date | date: "%Y" -}} },
+      month={ {{- page.date | date: "%b" | downcase -}} },
+      howpublished={\\url{ {{- page.url | absolute_url -}} } (KintaroAI.com)}
+    }`);
+    document.getElementById("citation-output-bibtex").innerHTML = cite.format('bibtex').trim();
+    document.getElementById("citation-output").innerHTML = 
+      cite.format("bibliography", {
+        format: "html",
+        template: "apa",
+        lang: "en-US"
+      });
+  });
+</script>

@@ -113,8 +113,9 @@ defaults:
     values:
       layout: "page"
   - scope:
-      path: "posts"
+      path: ""
       type: "posts"
     values:
       layout: "post"
+      citation: true
 
