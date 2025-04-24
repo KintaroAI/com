@@ -11,7 +11,7 @@ description: >-
   Your site's description here. This will appear in your document head meta
   (for Google search results) and in your feed.xml site description.
 baseurl: "" # the subpath of your site, e.g., /blog
-url: "" # replace with your actual domain
+url: "KintaroAI.com" # replace with your actual domain
 
 # Social links
 repo: "https://github.com/KintaroAI/com" # Replace with your repo URL
