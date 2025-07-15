@@ -1,11 +1,15 @@
 #!/bin/bash
+set -e  # Exit on any error
 cd "$(dirname "$0")"
+
+echo "Starting deployment process..."
+
+# Pull latest changes from git
+echo "Pulling latest changes from git..."
 git pull
 
-# Run this only once during the first run.
-# This will build new version of the site on git pull.
-# ./jekyll_build.sh
+# Build the site using jekyll_build.sh
+echo "Building the site..."
+./jekyll_build.sh
 
-# Run this only once during the first run.
-# This will serve the static version of the site.
-# ./nginx.sh
+echo "Deployment completed successfully!"
