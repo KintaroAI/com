@@ -1,0 +1,22 @@
+{% assign author_id = page.author | default: site.author %}
+{% assign author = site.data.authors[author_id] %}
+
+{% if author %}
+<div class="author-box" style="border:1px solid #eee; padding:1em; margin-top:2em; border-radius:6px; background:#fafbfc;">
+  <strong>{{ author.name }}</strong>
+  {% if author.bio %}
+    <p style="margin:0.5em 0 0.5em 0;">{{ author.bio }}</p>
+  {% endif %}
+  {% if author.email %}
+    <p style="margin:0.5em 0 0.5em 0;">Email: <a href="mailto:{{ author.email }}">{{ author.email }}</a></p>
+  {% endif %}
+  <div class="author-socials" style="margin-top:0.5em;">
+    {% if author.socials.github %}
+      <a href="https://github.com/{{ author.socials.github }}" target="_blank">GitHub</a>
+    {% endif %}
+    {% if author.socials.twitter %}
+      <a href="https://twitter.com/{{ author.socials.twitter }}" target="_blank" style="margin-left:1em;">Twitter</a>
+    {% endif %}
+  </div>
+</div>
+{% endif %} 
