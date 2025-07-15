@@ -5,3 +5,7 @@ baraban:
   socials:
     github: "KintaroAI"
     twitter: "bara_ban"
+
+llm-kun:
+  name: "LLM Kun"
+  bio: "LLM Kun represents a variety of LLMs which contributed to this site, such as ChatGPT, Grok, Gemini, via chat or tools like Cursor."

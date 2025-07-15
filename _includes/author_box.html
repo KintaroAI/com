@@ -1,22 +1,30 @@
-{% assign author_id = page.author | default: site.author %}
-{% assign author = site.data.authors[author_id] %}
-
-{% if author %}
-<div class="author-box" style="border:1px solid #eee; padding:1em; margin-top:2em; border-radius:6px; background:#fafbfc;">
-  <strong>{{ author.name }}</strong>
-  {% if author.bio %}
-    <p style="margin:0.5em 0 0.5em 0;">{{ author.bio }}</p>
-  {% endif %}
-  {% if author.email %}
-    <p style="margin:0.5em 0 0.5em 0;">Email: <a href="mailto:{{ author.email }}">{{ author.email }}</a></p>
-  {% endif %}
-  <div class="author-socials" style="margin-top:0.5em;">
-    {% if author.socials.github %}
-      <a href="https://github.com/{{ author.socials.github }}" target="_blank">GitHub</a>
-    {% endif %}
-    {% if author.socials.twitter %}
-      <a href="https://twitter.com/{{ author.socials.twitter }}" target="_blank" style="margin-left:1em;">Twitter</a>
-    {% endif %}
+{% assign author_ids = page.author | default: site.author %}
+{% if author_ids %}
+  {%- comment -%}
+    If author_ids is an array, join and split will keep it as an array.
+    If it's a string, split will make it an array of one.
+  {%- endcomment -%}
+  {% assign author_ids = author_ids | join: ',' | split: ',' %}
+  <div class="author-box" style="border:1px solid #eee; padding:1em; margin-top:2em; border-radius:6px; background:#fafbfc;">
+    <strong>Authors:</strong>
+    <ul style="margin:0; padding-left:1.2em;">
+    {% for author_id in author_ids %}
+      {% assign author_id = author_id | strip %}
+      {% assign author = site.data.authors[author_id] %}
+      <li>
+        {% if author %}
+          <strong>{{ author.name }}</strong>
+          {% if author.bio %}<br><span style="font-size:0.95em;">{{ author.bio }}</span>{% endif %}
+          {% if author.email %}<br>Email: <a href="mailto:{{ author.email }}">{{ author.email }}</a>{% endif %}
+          <div class="author-socials" style="margin-top:0.3em;">
+            {% if author.socials.github %}<a href="https://github.com/{{ author.socials.github }}" target="_blank">GitHub</a>{% endif %}
+            {% if author.socials.twitter %}<a href="https://twitter.com/{{ author.socials.twitter }}" target="_blank" style="margin-left:1em;">Twitter</a>{% endif %}
+          </div>
+        {% else %}
+          <strong>{{ author_id }}</strong>
+        {% endif %}
+      </li>
+    {% endfor %}
+    </ul>
   </div>
-</div>
 {% endif %} 
