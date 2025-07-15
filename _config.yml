@@ -6,12 +6,11 @@
 # Site settings
 title: Kintaro AI
 email: baraban@kintaroai.com
-author: "Baraban" # Replace with your name
+author: "Baraban"
 description: >-
-  Your site's description here. This will appear in your document head meta
-  (for Google search results) and in your feed.xml site description.
+  KintaroAI is an AGI research company aiming to solve general intelligence.
 baseurl: "" # the subpath of your site, e.g., /blog
-url: "KintaroAI.com" # replace with your actual domain
+url: "https://KintaroAI.com"
 
 # Social links
 repo: "https://github.com/KintaroAI/com" # Replace with your repo URL
@@ -21,8 +20,8 @@ github_branch: "master" # Or the default branch of your repo
 
 # Optional social links
 twitter: Kintaro_AI
-linkedin: your-linkedin-username # Replace if you have one
-dockerhub: your-dockerhub-username # Replace if applicable
+# linkedin: your-linkedin-username # Replace if you have one
+# dockerhub: your-dockerhub-username # Replace if applicable
 
 # Theme settings
 remote_theme: "vsoch/docsy-jekyll"
@@ -36,7 +35,7 @@ fixedNav: true # true or false
 
 # Logo and branding
 # Uncomment and set these if you have a logo
-logo: "assets/img/logo/your-logo.png"
+# logo: "assets/img/logo/your-logo.png"
 logo_pixels: 34
 color: "#30638e" # primary color for header, buttons
 
